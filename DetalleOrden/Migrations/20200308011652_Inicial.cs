@@ -29,7 +29,6 @@ namespace DetalleOrden.Migrations
                     ProductoId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     NombreProducto = table.Column<string>(nullable: true),
-                    Inventario = table.Column<decimal>(nullable: false),
                     Precio = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
@@ -45,7 +44,7 @@ namespace DetalleOrden.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     ClienteId = table.Column<int>(nullable: false),
                     Fecha = table.Column<DateTime>(nullable: false),
-                    Monto = table.Column<decimal>(nullable: false)
+                    MontoTotal = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

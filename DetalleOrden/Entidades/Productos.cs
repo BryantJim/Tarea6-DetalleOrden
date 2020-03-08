@@ -11,7 +11,6 @@ namespace DetalleOrden.Entidades
         [Key]
         public int ProductoId { get; set; }
         public String NombreProducto { get; set; }
-        public decimal Inventario { get; set; }
         public decimal Precio { get; set; }
 
         [ForeignKey("ProductoId")]
@@ -21,7 +20,6 @@ namespace DetalleOrden.Entidades
         {
             ProductoId = 0;
             NombreProducto = string.Empty;
-            Inventario = 0;
             Precio = 0;
         }
     }

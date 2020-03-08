@@ -81,7 +81,7 @@ namespace DetalleOrden.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Monto")
+                    b.Property<decimal>("MontoTotal")
                         .HasColumnType("TEXT");
 
                     b.HasKey("OrdenId");
@@ -96,9 +96,6 @@ namespace DetalleOrden.Migrations
                     b.Property<int>("ProductoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Inventario")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("NombreProducto")
                         .HasColumnType("TEXT");

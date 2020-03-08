@@ -12,7 +12,7 @@ namespace DetalleOrden.Entidades
         public int OrdenId { get; set; }
         public int ClienteId { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Monto { get; set; }
+        public decimal MontoTotal { get; set; }
 
         [ForeignKey("OrdenId")]
         public virtual List<OrdenDetalle> OrdenDetalle { get; set; }
@@ -22,7 +22,7 @@ namespace DetalleOrden.Entidades
             OrdenId = 0;
             ClienteId = 0;
             Fecha = DateTime.Now;
-            Monto = 0;
+            MontoTotal = 0;
             OrdenDetalle = new List<OrdenDetalle>();
         }
     }

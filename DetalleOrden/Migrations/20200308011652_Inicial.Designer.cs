@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DetalleOrden.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200308003944_Inicial")]
+    [Migration("20200308011652_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,7 +83,7 @@ namespace DetalleOrden.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Monto")
+                    b.Property<decimal>("MontoTotal")
                         .HasColumnType("TEXT");
 
                     b.HasKey("OrdenId");
@@ -98,9 +98,6 @@ namespace DetalleOrden.Migrations
                     b.Property<int>("ProductoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Inventario")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("NombreProducto")
                         .HasColumnType("TEXT");
