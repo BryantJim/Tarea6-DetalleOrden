@@ -27,5 +27,10 @@ namespace DetalleOrden.Entidades
             MontoTotal = 0;
             OrdenDetalle = new List<OrdenDetalle>();
         }
+
+        public Ordenes(int clienteid)
+        {
+            ClienteId = clienteid;
+        }
     }
 }

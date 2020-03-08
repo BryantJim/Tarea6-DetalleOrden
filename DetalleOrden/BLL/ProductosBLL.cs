@@ -39,10 +39,11 @@ namespace DetalleOrden.BLL
 
             try
             {
-                db.Database.ExecuteSqlRaw($"Delete FROM Productos Where ProductoId={producto.ProductoId}");
-                foreach (var item in producto.OrdenDetalle)
+                var Anterior = ProductosBLL.Buscar(producto.ProductoId);
+                foreach (var item in Anterior.OrdenDetalle)
                 {
-                    db.Entry(item).State = EntityState.Added;
+                    if (!producto.OrdenDetalle.Exists(d => d.ProductoId == item.ProductoId))
+                        db.Entry(item).State = EntityState.Deleted;
                 }
                 db.Entry(producto).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);

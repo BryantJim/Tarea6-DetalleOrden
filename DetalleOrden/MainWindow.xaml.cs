@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DetalleOrden.UI.RegistrarCliente;
 
 namespace DetalleOrden
 {
@@ -23,6 +24,18 @@ namespace DetalleOrden
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RClientes rc = new RClientes();
+            rc.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            RegistroProducto rp = new RegistroProducto();
+            rp.Show();
         }
     }
 }

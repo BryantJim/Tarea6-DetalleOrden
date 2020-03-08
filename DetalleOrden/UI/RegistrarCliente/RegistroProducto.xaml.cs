@@ -9,31 +9,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using DetalleOrden.Entidades;
 using DetalleOrden.BLL;
+using DetalleOrden.Entidades;
 
 namespace DetalleOrden.UI.RegistrarCliente
 {
     /// <summary>
-    /// Interaction logic for RClientes.xaml
+    /// Interaction logic for RegistroProducto.xaml
     /// </summary>
-    public partial class RClientes : Window
+    public partial class RegistroProducto : Window
     {
-        Clientes cliente = new Clientes();
-            
-        public RClientes()
+        Productos producto = new Productos();
+
+        public RegistroProducto()
         {
             InitializeComponent();
-            this.DataContext = cliente;
-            ClienteIdTextBox.Text = "0";
+            this.DataContext = producto;
+            ProductoIdTextBox.Text = "0";
         }
 
         private void Limpiar()
         {
-            ClienteIdTextBox.Text = "0";
-            NombreTextBox.Text = string.Empty;
-            CedulaTextBox.Text = string.Empty;
-            TelefonoTextBox.Text = string.Empty;
+            ProductoIdTextBox.Text = "0";
+            NombreProductoTextBox.Text = string.Empty;
+            PrecioTextBox.Text = "0";
             Actualizar();
         }
 
@@ -44,69 +43,69 @@ namespace DetalleOrden.UI.RegistrarCliente
 
         private bool ExisteEnLaBasedeDato()
         {
-            Clientes clientes = ClientesBLL.Buscar(cliente.ClienteId);
-            return clientes != null;
+            Productos productos = ProductosBLL.Buscar(producto.ProductoId);
+            return productos != null;
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
 
-            if (Convert.ToInt32(ClienteIdTextBox.Text) == 0)
+            if (Convert.ToInt32(ProductoIdTextBox.Text) == 0)
             {
-                paso = ClientesBLL.Guardar(cliente);
-                cliente.Orden.Add(new Ordenes(Convert.ToInt32(ClienteIdTextBox.Text)));
+                paso = ProductosBLL.Guardar(producto);
+                //producto.OrdenDetalle.Add(new Ordenes(Convert.ToInt32(ClienteIdTextBox.Text)));
             }
             else
             {
                 if (!ExisteEnLaBasedeDato())
                 {
-                    MessageBox.Show("No se puede modificar una persona que no existe", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("No se puede modificar un producto que no existe", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 else
                 {
-                    paso = ClientesBLL.Modificar(cliente);
+                    paso = ProductosBLL.Modificar(producto);
                 }
             }
             if (paso)
                 Limpiar();
-                
+
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Clientes clienteAnterior = ClientesBLL.Buscar(Convert.ToInt32(ClienteIdTextBox.Text));
+            Productos productoAnterior = ProductosBLL.Buscar(Convert.ToInt32(ProductoIdTextBox.Text));
 
-            if (clienteAnterior != null)
+            if (productoAnterior != null)
             {
-                cliente = clienteAnterior;
+                producto = productoAnterior;
                 Actualizar();
             }
             else
             {
-                MessageBox.Show("persona no encontrada");
+                MessageBox.Show("producto no encontrado");
                 Limpiar();
             }
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientesBLL.Eliminar(Convert.ToInt32(ClienteIdTextBox.Text)))
+            if (ProductosBLL.Eliminar(Convert.ToInt32(ProductoIdTextBox.Text)))
             {
-                MessageBox.Show("Cliente eliminado");
+                MessageBox.Show("Producto eliminado");
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("no se puede eliminar un cliente que no existe");
+                MessageBox.Show("no se puede eliminar un producto que no existe");
             }
         }
 
         private void Actualizar()
         {
             this.DataContext = null;
-            this.DataContext = cliente;
+            this.DataContext = producto;
         }
     }
 }
