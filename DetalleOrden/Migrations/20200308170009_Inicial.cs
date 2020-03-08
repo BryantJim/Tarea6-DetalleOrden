@@ -43,6 +43,7 @@ namespace DetalleOrden.Migrations
                     OrdenId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     ClienteId = table.Column<int>(nullable: false),
+                    NombreCliente = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false),
                     MontoTotal = table.Column<decimal>(nullable: false)
                 },

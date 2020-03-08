@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DetalleOrden.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200308011652_Inicial")]
+    [Migration("20200308170009_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,6 +84,9 @@ namespace DetalleOrden.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("MontoTotal")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NombreCliente")
                         .HasColumnType("TEXT");
 
                     b.HasKey("OrdenId");

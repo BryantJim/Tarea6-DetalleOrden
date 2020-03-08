@@ -11,6 +11,7 @@ namespace DetalleOrden.Entidades
         [Key]
         public int OrdenId { get; set; }
         public int ClienteId { get; set; }
+        public String NombreCliente { get; set; }
         public DateTime Fecha { get; set; }
         public decimal MontoTotal { get; set; }
 
@@ -21,6 +22,7 @@ namespace DetalleOrden.Entidades
         {
             OrdenId = 0;
             ClienteId = 0;
+            NombreCliente = string.Empty;
             Fecha = DateTime.Now;
             MontoTotal = 0;
             OrdenDetalle = new List<OrdenDetalle>();

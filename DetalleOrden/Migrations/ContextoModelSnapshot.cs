@@ -84,6 +84,9 @@ namespace DetalleOrden.Migrations
                     b.Property<decimal>("MontoTotal")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("NombreCliente")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("OrdenId");
 
                     b.HasIndex("ClienteId");
