@@ -48,7 +48,7 @@
         <StackPanel Grid.Column="3">
             <Button x:Name="BuscarButton" Content="Buscar" HorizontalContentAlignment="Right" Margin="5" HorizontalAlignment="Left" Height="24" Width="70" Click="BuscarButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="\Iconos\busqueda.png" AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="C:\Users\Usuario\source\repos\Tarea6-DetalleOrden\DetalleOrden\Iconos\busqueda.png" AlignmentX="Left" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
         </StackPanel>
@@ -170,7 +170,7 @@
         <StackPanel Grid.Row="9" Grid.Column="3">
             <Button x:Name="AgregarButton" Content="Agregar" HorizontalContentAlignment="Right" Width="70" Height="24" HorizontalAlignment="Center" Margin="10" Click="AgregarButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="\Iconos\mas.jpg" AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="C:\Users\Usuario\source\repos\Tarea6-DetalleOrden\DetalleOrden\Iconos\mas.jpg" AlignmentX="Left" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
         </StackPanel>
@@ -186,7 +186,7 @@
         <StackPanel Grid.Row="11" Grid.Column="1">
             <Button x:Name="NuevoButton" Content="Nuevo" HorizontalContentAlignment="Right" Width="70" Height="24" Margin="30" Click="NuevoButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="\Iconos\nuevo.png" AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="C:\Users\Usuario\source\repos\Tarea6-DetalleOrden\DetalleOrden\Iconos\nuevo.png" AlignmentX="Left" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
         </StackPanel>
@@ -194,7 +194,7 @@
         <StackPanel Grid.Row="11" Grid.Column="2">
             <Button x:Name="GuardarButton" Content="Guardar" HorizontalContentAlignment="Right" Width="70" Height="24" Margin="30" Click="GuardarButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="\Iconos\disco-flexible.png" AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="C:\Users\Usuario\source\repos\Tarea6-DetalleOrden\DetalleOrden\Iconos\disco-flexible.png" AlignmentX="Left" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
         </StackPanel>
@@ -202,7 +202,7 @@
         <StackPanel Grid.Row="11" Grid.Column="3">
             <Button x:Name="EliminarButton" Content="Eliminar" HorizontalContentAlignment="Right" Width="70" Height="24" Margin="30" HorizontalAlignment="Left" Click="EliminarButton_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="\Iconos\eliminar.png" AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="C:\Users\Usuario\source\repos\Tarea6-DetalleOrden\DetalleOrden\Iconos\eliminar.png" AlignmentX="Left" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
         </StackPanel>
