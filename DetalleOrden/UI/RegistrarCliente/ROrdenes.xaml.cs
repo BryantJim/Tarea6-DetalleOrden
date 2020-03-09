@@ -62,6 +62,7 @@ namespace DetalleOrden.UI.RegistrarCliente
             orden.ordenDetalle.Add(new OrdenDetalle(Convert.ToInt32(OrdenIdTextBox.Text), Convert.ToInt32(ProductoIdTextBox.Text),
                 DescripcionTextBox.Text,Convert.ToDecimal(CantidadTextBox.Text), Convert.ToDecimal(PrecioTextBox.Text),
                 Convert.ToDecimal(MontoTextBox.Text)));
+
             orden.MontoTotal += Convert.ToDecimal(MontoTextBox.Text);
             MontoTotalTextBox.Text = Convert.ToString(orden.MontoTotal);
 
@@ -210,7 +211,7 @@ namespace DetalleOrden.UI.RegistrarCliente
             if (!string.IsNullOrWhiteSpace(CantidadTextBox.Text))
             {
                 decimal Monto, Precio = Convert.ToDecimal(PrecioTextBox.Text);
-                int Cantidad = Convert.ToInt32(CantidadTextBox.Text);
+                decimal Cantidad = Convert.ToDecimal(CantidadTextBox.Text);
 
                 Monto = Precio * Cantidad;
                 MontoTextBox.Text = Convert.ToString(Monto);

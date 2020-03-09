@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DetalleOrden.Entidades;
 using DetalleOrden.BLL;
+using DetalleOrden.Validaciones;
 
 namespace DetalleOrden.UI.RegistrarCliente
 {

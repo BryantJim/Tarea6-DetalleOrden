@@ -26,22 +26,22 @@ namespace DetalleOrden
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RegistrarCliente_Click(object sender, RoutedEventArgs e)
         {
-            RClientes rc = new RClientes();
-            rc.Show();
+            RClientes registrarCliente = new RClientes();
+            registrarCliente.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void RegistrarProducto_Click(object sender, RoutedEventArgs e)
         {
-            RegistroProducto rp = new RegistroProducto();
-            rp.Show();
+            RegistroProducto registrarProducto = new RegistroProducto();
+            registrarProducto.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void RegistrarOrden_Click(object sender, RoutedEventArgs e)
         {
-            ROrdenes ro = new ROrdenes();
-            ro.Show();
+            ROrdenes registrarOrdenes = new ROrdenes();
+            registrarOrdenes.Show();
         }
     }
 }
