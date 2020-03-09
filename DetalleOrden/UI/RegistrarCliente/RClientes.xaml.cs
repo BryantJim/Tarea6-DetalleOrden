@@ -55,7 +55,6 @@ namespace DetalleOrden.UI.RegistrarCliente
             if (Convert.ToInt32(ClienteIdTextBox.Text) == 0)
             {
                 paso = ClientesBLL.Guardar(cliente);
-                cliente.Orden.Add(new Ordenes(Convert.ToInt32(ClienteIdTextBox.Text)));
             }
             else
             {

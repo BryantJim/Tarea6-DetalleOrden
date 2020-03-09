@@ -37,5 +37,11 @@ namespace DetalleOrden
             RegistroProducto rp = new RegistroProducto();
             rp.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ROrdenes ro = new ROrdenes();
+            ro.Show();
+        }
     }
 }

@@ -114,7 +114,7 @@ namespace DetalleOrden.Migrations
             modelBuilder.Entity("DetalleOrden.Entidades.OrdenDetalle", b =>
                 {
                     b.HasOne("DetalleOrden.Entidades.Ordenes", null)
-                        .WithMany("OrdenDetalle")
+                        .WithMany("ordenDetalle")
                         .HasForeignKey("OrdenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

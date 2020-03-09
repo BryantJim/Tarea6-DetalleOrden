@@ -39,12 +39,6 @@ namespace DetalleOrden.BLL
 
             try
             {
-                var Anterior = ClientesBLL.Buscar(cliente.ClienteId);
-                foreach(var item in Anterior.Orden)
-                {
-                    if (!cliente.Orden.Exists(d => d.ClienteId == item.ClienteId))
-                        db.Entry(item).State = EntityState.Deleted;
-                }
                 db.Entry(cliente).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
@@ -66,9 +60,9 @@ namespace DetalleOrden.BLL
 
             try
             {
-                var Eliminar = ClientesBLL.Buscar(id);
-                db.Entry(Eliminar).State = EntityState.Deleted;
-                paso = (db.SaveChanges() > 0);
+                var eliminar = ClientesBLL.Buscar(id);
+                db.Entry(eliminar).State = EntityState.Deleted;
+                paso = db.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -88,9 +82,7 @@ namespace DetalleOrden.BLL
 
             try
             {
-                cliente = db.Clientes.Include(x => x.Orden)
-                     .Where(x => x.ClienteId == id)
-                     .SingleOrDefault();
+                cliente = db.Clientes.Find(id);
             }
             catch (Exception)
             {

@@ -28,5 +28,16 @@ namespace DetalleOrden.Entidades
             Precio = 0;
             Monto = 0;
         }
+
+        public OrdenDetalle(int ordenId, int productoId, string descripcion, decimal cantidad, decimal precio, decimal monto)
+        {
+            OrdenDetalleId = 0;
+            OrdenId = ordenId;
+            ProductoId = productoId;
+            Descripcion = descripcion;
+            Cantidad = cantidad;
+            Precio = precio;
+            Monto = monto;
+        }
     }
 }

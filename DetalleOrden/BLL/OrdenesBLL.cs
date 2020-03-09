@@ -39,8 +39,8 @@ namespace DetalleOrden.BLL
 
             try
             {
-                db.Database.ExecuteSqlRaw($"Delete FROM Ordenes Where ClienteId={orden.ClienteId}");
-                foreach (var item in orden.OrdenDetalle)
+                db.Database.ExecuteSqlRaw($"Delete FROM ordenDetalle Where OrdenId={orden.OrdenId}");
+                foreach (var item in orden.ordenDetalle)
                 {
                     db.Entry(item).State = EntityState.Added;
                 }
@@ -87,8 +87,8 @@ namespace DetalleOrden.BLL
 
             try
             {
-                orden = db.Ordenes.Include(x => x.OrdenDetalle)
-                     .Where(x => x.ClienteId == id)
+                orden = db.Ordenes.Include(x => x.ordenDetalle)
+                     .Where(x => x.OrdenId == id)
                      .SingleOrDefault();
             }
             catch (Exception)

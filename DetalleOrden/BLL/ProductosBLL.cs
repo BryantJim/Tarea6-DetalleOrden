@@ -39,12 +39,6 @@ namespace DetalleOrden.BLL
 
             try
             {
-                var Anterior = ProductosBLL.Buscar(producto.ProductoId);
-                foreach (var item in Anterior.OrdenDetalle)
-                {
-                    if (!producto.OrdenDetalle.Exists(d => d.ProductoId == item.ProductoId))
-                        db.Entry(item).State = EntityState.Deleted;
-                }
                 db.Entry(producto).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
@@ -66,7 +60,7 @@ namespace DetalleOrden.BLL
 
             try
             {
-                var Eliminar = ProductosBLL.Buscar(id);
+                var Eliminar = db.Productos.Find(id);
                 db.Entry(Eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }
@@ -88,9 +82,7 @@ namespace DetalleOrden.BLL
 
             try
             {
-                producto = db.Productos.Include(x => x.OrdenDetalle)
-                     .Where(x => x.ProductoId == id)
-                     .SingleOrDefault();
+                producto = db.Productos.Find(id);
             }
             catch (Exception)
             {

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DetalleOrden.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200308170009_Inicial")]
+    [Migration("20200309050026_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,7 +116,7 @@ namespace DetalleOrden.Migrations
             modelBuilder.Entity("DetalleOrden.Entidades.OrdenDetalle", b =>
                 {
                     b.HasOne("DetalleOrden.Entidades.Ordenes", null)
-                        .WithMany("OrdenDetalle")
+                        .WithMany("ordenDetalle")
                         .HasForeignKey("OrdenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

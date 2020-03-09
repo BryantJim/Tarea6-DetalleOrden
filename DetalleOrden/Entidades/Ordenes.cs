@@ -16,7 +16,7 @@ namespace DetalleOrden.Entidades
         public decimal MontoTotal { get; set; }
 
         [ForeignKey("OrdenId")]
-        public virtual List<OrdenDetalle> OrdenDetalle { get; set; }
+        public virtual List<OrdenDetalle> ordenDetalle { get; set; }
 
         public Ordenes()
         {
@@ -25,12 +25,8 @@ namespace DetalleOrden.Entidades
             NombreCliente = string.Empty;
             Fecha = DateTime.Now;
             MontoTotal = 0;
-            OrdenDetalle = new List<OrdenDetalle>();
+            ordenDetalle = new List<OrdenDetalle>();
         }
 
-        public Ordenes(int clienteid)
-        {
-            ClienteId = clienteid;
-        }
     }
 }
