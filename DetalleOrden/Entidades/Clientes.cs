@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
+
+//Clase cliente
 namespace DetalleOrden.Entidades
 {
     public class Clientes

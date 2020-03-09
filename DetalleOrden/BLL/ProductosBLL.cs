@@ -7,6 +7,8 @@ using DetalleOrden.Entidades;
 using System.Linq;
 using System.Linq.Expressions;
 
+
+//Metodo detalle
 namespace DetalleOrden.BLL
 {
     public class ProductosBLL

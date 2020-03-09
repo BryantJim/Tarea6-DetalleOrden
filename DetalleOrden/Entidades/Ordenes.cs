@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
+
+//Clase ordenes
 namespace DetalleOrden.Entidades
 {
     public class Ordenes
